@@ -22,7 +22,7 @@ interface Props {
 
 export const FormStyles = ({ children }: Props) => {
 	return (
-		<Stack mb={20} p={25} boxShadow={'dark-lg'} rounded={'2xl'} bg={'primary'}boxShadow={'0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(211 55 239 / 43%)'}>
+		<Stack mb={20} p={25} boxShadow={'dark-lg'} rounded={'2xl'} bg={'primary'}>
 			{children}
 		</Stack>
 	)
