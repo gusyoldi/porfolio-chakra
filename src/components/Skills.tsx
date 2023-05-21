@@ -27,7 +27,7 @@ export const ListSkills = () => {
 					</h2>
 					<AccordionPanel py={4}>
 						<Skill name='JavaScript' />
-						{/* <Skill name='React' />
+						<Skill name='React' />
 						<Skill name='NodeJs' />
 						<Skill name='Bootstrap' />
 						<Skill name='Express' />
@@ -35,7 +35,7 @@ export const ListSkills = () => {
 						<Skill name='MySQL' />
 						<Skill name='ChakraUI' />
 						<Skill name='Sequelize' />
-						<Skill name='Git' /> */}
+						<Skill name='Git' />
 					</AccordionPanel>
 				</AccordionItem>
 			</Accordion>

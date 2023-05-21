@@ -10,7 +10,7 @@ export default function Footer() {
 			<Stack
 				direction='row'
 				py='16px'
-				px='40px'
+				
 				// maxWidth='1200px'
 				justify='space-between'
 				margin={'auto'}>

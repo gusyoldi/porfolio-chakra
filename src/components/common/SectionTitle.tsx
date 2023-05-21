@@ -2,10 +2,9 @@ import { Text } from '@chakra-ui/react'
 
 interface Props  {
 content: string
-style: string
 }
 
-export const SectionTitle = ({content, style}: Props) => {
+export const SectionTitle = ({content}: Props) => {
 	return (
 		<Text
 			as='h3'

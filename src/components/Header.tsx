@@ -13,6 +13,7 @@ import MY_FACE from '../assets/images/myFace.jpg'
 import PULPO from '../assets/images/pulpo.jpg' //Tiene mas onda y es purpura
 import { MyButton } from './common/Buttons'
 import CV from '../assets/GustavoYoldi-CV.pdf'
+import { Section } from './common/Section'
 interface Props {
 	toggleColorMode: () => void
 }
@@ -43,13 +44,10 @@ export default function Header() {
 	const textColor = useColorModeValue('five', 'secondary')
 
 	return (
-		<Stack
-			userSelect={'none'}
-			as='header'
+		<Section
 			direction={{ base: 'column', lg: 'row' }}
 			align='center'
-			justify='center'
-			p={{ base: '20px', lg: '40px' }}
+			justify='space-between'
 			bg={bgColor}>
 			{flag && <Text>El useBoolean papa!</Text>}
 			<Image
@@ -84,6 +82,6 @@ export default function Header() {
 				<MyButton content='Descargar mi cv' url={CV} />
 				<MyButton onClick={setFlag.toggle} content='Chau pulpo' />
 			</Stack>
-		</Stack>
+		</Section>
 	)
 }

@@ -1,20 +1,26 @@
 import { Stack, Box, Text, useColorMode, Container } from '@chakra-ui/react'
-
+import { ReactNode } from 'react'
 import ListMyProjects from './components/MyProjects/ListMyProjects'
 import Header, { DarkModeBtn } from './components/Header'
 import { ListSkills } from './components/Skills'
 import { About } from './components/About'
 import Footer from './components/Footer'
 import { motion } from 'framer-motion'
-import Contact from './components/Contact/Contact'
-import { useState } from 'react'
+import { Contact } from './components/Contact/Contact'
 
+interface LayoutProps {
+	children: ReactNode
+}
 
-const Layout = ({children}) => {
-	return <Container maxW={{ sm: 'lg', md: '3xl', lg: '5xl'}} centerContent >
-		
-		{children}
-	</Container>
+const Layout = ({ children }: LayoutProps) => {
+	return (
+		<Stack
+			mx={'auto'}
+			maxW={{ sm: 'lg', md: '3xl', lg: '5xl', xl: '1500px' }}
+			userSelect={'none'}>
+			{children}
+		</Stack>
+	)
 }
 
 function App() {
@@ -24,25 +30,25 @@ function App() {
 			<Stack alignItems={'end'}>
 				<DarkModeBtn toggleColorMode={toggleColorMode} />
 			</Stack>
-			<Header />
-		<Layout>
-
-			<Stack
-				userSelect={'none'}
-				as='main'
-				height='100%'
-				
-				margin='auto'
-				bg=''>
+			<Layout>
+				<Header />
 				<ListMyProjects />
 				<ListSkills />
 				<About />
 				<Contact />
-			</Stack>
+				<Footer />
+			</Layout>
+		</>
+	)
+}
 
-			
-			{/* TEMPORAL */}
-			{/* <Stack textAlign={"center"} py={"200px"}>
+export default App
+
+{
+	/* TEMPORAL */
+}
+{
+	/* <Stack textAlign={"center"} py={"200px"}>
 				<motion.h1
 				// initial={{ color: "#fff", scale: 1 }}
 				transition={{ duration: 5 }}
@@ -54,11 +60,5 @@ function App() {
 				>
 				Hello World
 				</motion.h1>
-			</Stack> */}
-		</Layout>
-<Footer />
-		</>
-	)
+			</Stack> */
 }
-
-export default App

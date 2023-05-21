@@ -5,13 +5,20 @@ import { SectionTitle } from './SectionTitle'
 interface SectionProps {
 	children: ReactNode
 	title?: string
+	styles: object
 }
 
-export const Section = ({ children, title }: SectionProps) => {
+export const Section = ({
+	children,
+	title,
+	styles
+}: SectionProps) => {
 	return (
-		<Stack as='section' my={20} >
-			<SectionTitle content={title} />
-			{children}
+		<Stack as='section' my={4}>
+			{title && <SectionTitle content={title} />}
+			<Stack {...styles}>
+				{children}
+			</Stack>
 		</Stack>
 	)
 }
