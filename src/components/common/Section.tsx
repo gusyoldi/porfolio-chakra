@@ -14,7 +14,7 @@ export const Section = ({
 	styles
 }: SectionProps) => {
 	return (
-		<Stack as='section' my={4}>
+		<Stack as='section' my={10}>
 			{title && <SectionTitle content={title} />}
 			<Stack {...styles}>
 				{children}

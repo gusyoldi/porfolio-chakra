@@ -81,7 +81,7 @@ export default function Header() {
 				</Text>
 
 				<MyButton content='Descargar mi cv' url={CV} />
-				<MyButton onClick={setFlag.toggle} content='Chau pulpo' />
+				{/* <MyButton onClick={setFlag.toggle} content='Chau pulpo' /> */}
 			</Stack>
 		</Section>
 	)

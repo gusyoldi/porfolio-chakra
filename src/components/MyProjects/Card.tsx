@@ -2,17 +2,18 @@ import { Image, Stack, Text, Link } from '@chakra-ui/react'
 import { ReactJSXElement } from '@emotion/react/types/jsx-namespace'
 import { motion } from 'framer-motion'
 import { MyButton } from '../common/Buttons'
+import { ReactNode, useState } from 'react'
 
-const cardAnimate = {
-	hidden: {
-		opacity: 1,
-		scale: 1,
-	},
-	visible: {
-		opacity: 1,
-		scale: 1.2,
-	},
-}
+// const cardAnimate = {
+// 	hidden: {
+// 		opacity: 1,
+// 		scale: 1,
+// 	},
+// 	visible: {
+// 		opacity: 1,
+// 		scale: 1.2,
+// 	},
+// }
 
 interface AnimatedCardProps {
 	toProject: string
@@ -29,20 +30,20 @@ export const AnimatedCard = ({
 	subtitle,
 	img,
 }: AnimatedCardProps) => {
+	const [isActive, setIsActive] = useState(false);
 	return (
 		<motion.div
-			// variants={cardAnimate}
-			// initial="hidden"
-			// animate="visible"
-			// transition={{type: 'spring', delay: 0.5}}
-			
-			transition={{ duration: 0.6, type: 'spring', stiffness: 200 }}
+			transition={{ duration: 0.8, type: 'spring', stiffness: 200 }}
 			whileHover={{
-				scale: [1, 1.1],
-				originX: 0,
-				// textShadow: '0px 0px 8px rgb(255, 255, 255)',
-				// boxShadow: '0px 0px 8px rgb(255, 255, 255)',
-			}}>
+				// scale: [1, 1.1],
+				// originX: 0,
+				rotateY: 180,
+			}}
+      // onHoverStart={() => setIsActive(!isActive)}
+      // animate={{
+      //   rotateY: isActive ? 180 : 0
+      // }}
+			>
 			<Card toProject={toProject} toGitHub={toGitHub}>
 				<CardHead title={title} subtitle={subtitle} />
 				<CardImg link={toProject} img={img} />
@@ -51,7 +52,7 @@ export const AnimatedCard = ({
 	)
 }
 interface CardProps {
-	// children: ReactJSXElemen;
+	children: ReactNode
 	toProject: string
 	toGitHub: string
 }
@@ -68,9 +69,7 @@ const Card = ({ children, toProject, toGitHub }: CardProps) => {
 			textAlign='center'
 			boxShadow='dark-lg'
 			width={{ base: '220' }}
-			height='330px'
-			
-			>
+			height='330px'>
 			{children}
 			<Stack direction='row' justifyContent='center'>
 				<MyButton content='Proyecto' url={toProject} />
@@ -87,7 +86,7 @@ interface cardHeadProps {
 
 const CardHead = ({ title, subtitle }: cardHeadProps) => {
 	return (
-		<Stack  color={'secondary'}>
+		<Stack color={'secondary'}>
 			<Text as='h5' fontSize={{ base: '18px' }}>
 				{title}
 			</Text>
@@ -111,7 +110,6 @@ const CardImg = ({ link, img }: CardImgProps) => {
 				alt='projectImg'
 				width='220px'
 				height='210'
-				// boxSize={"cover"}
 				filter='grayscale(1)'
 				_hover={{ filter: 'grayscale(0)' }}
 			/>

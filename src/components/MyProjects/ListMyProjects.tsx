@@ -4,24 +4,14 @@ import PORFOLIO from '../../assets/images/ProjectsImg/portfolio-img.png'
 import COMPARTI_UN_DATO from '../../assets/images/ProjectsImg/comparti-un-dato.png'
 import SOCIAL_PROOF from '../../assets/images/ProjectsImg/desktop-design-img.jpg'
 import { AnimatedCard } from './Card'
-import { SectionTitle } from '../common/SectionTitle'
 import { Section } from '../common/Section'
 
 
 
 export default function ListMyProjects() {
 	return (
-		<Section >
-			<Stack
-				display={{ base: 'flex', md: 'grid' }}
-				direction={{ base: 'column' }}
-				// spacing={{base: 8}}
-				alignContent='center'
-				justifyContent='space-between'
-				alignItems={{ base: 'center' }}
-				gridTemplateColumns={{ md: 'auto auto', lg: 'auto auto auto' }}
-				// spacing={{md: 10}}
-				gap={{ md: 20 }}>
+		<Section styles={{display: {base: 'flex', md: 'grid'}, direction: {base: 'column'}, justifyContent: 'space-between', alignItems: {base: 'center'}, gridTemplateColumns: {md: 'auto auto', lg: 'auto auto auto'}, gap: {md: 20}}} >
+		
 				<AnimatedCard
 					title='Porfolio'
 					subtitle='Usted está aquí!'
@@ -50,7 +40,7 @@ export default function ListMyProjects() {
 					toProject='https://gusyoldi.github.io/social-proof-page-challenge/'
 					toGitHub='https://github.com/gusyoldi/social-proof-page-challenge'
 				/>
-			</Stack>
+	
 		</Section>
 	)
 }

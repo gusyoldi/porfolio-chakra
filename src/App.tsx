@@ -16,7 +16,7 @@ const Layout = ({ children }: LayoutProps) => {
 	return (
 		<Stack
 			mx={'auto'}
-			maxW={{ sm: 'lg', md: '3xl', lg: '5xl', xl: '1500px' }}
+			maxW={{ sm: 'lg', md: '3xl', lg: '5xl' }}
 			userSelect={'none'}>
 			{children}
 		</Stack>
