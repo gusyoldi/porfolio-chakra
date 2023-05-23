@@ -45,25 +45,26 @@ export default function Header() {
 
 	return (
 		<Section
-			direction={{ base: 'column', lg: 'row' }}
-			align='center'
-			justify='space-between'
-			bg={bgColor}>
+		
+		styles={{direction: {base: 'column', lg: 'row'}, align: 'center', bg: {bgColor}}}
+			>
 			{flag && <Text>El useBoolean papa!</Text>}
 			<Image
 				visibility={flag ? 'hidden' : 'visible'}
 				src={PULPO}
 				alt='myFace'
 				borderRadius='full'
-				mb={7}
+				margin='auto'
+				mb={{lg:7}}
 				mr={{ lg: 20 }}
 				w={{ base: 'xs', md: 'sm' }}
 			/>
 
 			<Stack
+			
 				color={textColor}
 				spacing={6}
-				textAlign={{ base: 'center', md: 'start' }}
+				textAlign={{ base: 'center', lg: 'start' }}
 				maxW={{ md: 'xl' }}>
 				<Text
 					as='h1'
